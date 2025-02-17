@@ -67,8 +67,7 @@ public class LifeCycleDemoBean implements InitializingBean, DisposableBean, Bean
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("## postProcessBeforeInitialization: " + beanName);
 
-        if (bean instanceof MyController){
-            MyController myController = (MyController) bean;
+        if (bean instanceof MyController myController){
             System.out.println("Calling before init");
             myController.beforeInit();
         }
